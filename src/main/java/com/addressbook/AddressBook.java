@@ -1,9 +1,6 @@
 package com.addressbook;
 
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 public class AddressBook {
 
@@ -142,5 +139,21 @@ public class AddressBook {
                 return;
             }
         }
+    }
+
+    /** @multipleAddressBook method is use for to create multipleaddressBook
+     *
+     */
+    public void multipleAddressBook() {
+        System.out.println("Enter how many addressBook you want to create");
+        int numberOfAddressBook = readFromUser.nextInt();
+        List addressBookList = new ArrayList<>();
+        int firstAddressBook = 1;
+        for (int addressBooks = firstAddressBook; addressBooks <= numberOfAddressBook; addressBooks++ ) {
+            System.out.println("Enter name of addressBook");
+            String addressBookName = readFromUser.next();
+            addressBookList.add(addressBookName);
+        }
+        System.out.println(addressBookList);
     }
 }
