@@ -123,4 +123,24 @@ public class AddressBook {
         }
         System.out.println(addressBook);
     }
+
+    /** @deleteContact method is used to delete contact
+     *
+     */
+    public void deleteContact() {
+        System.out.println("enter a name to delete contact");
+        Scanner sc = new Scanner(System.in);
+        String name = readFromUser.next();
+        Iterator itr = addressBook.iterator();
+
+        while (itr.hasNext()) {
+            Contact person = (Contact)  itr.next();
+            if (name.equals(person.getFirstName())) {
+                addressBook.remove(person);
+                System.out.println("deleted successfully");
+                System.out.println(addressBook);
+                return;
+            }
+        }
+    }
 }
