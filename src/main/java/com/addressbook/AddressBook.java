@@ -190,4 +190,19 @@ public class AddressBook {
             }
         }
     }
+
+    public void countPersonByCity() {
+        System.out.println("Enter CityName:");
+        String cityName = readFromUser.next();
+        int count=0;
+
+        Iterator iterator = addressBook.iterator();
+        while (iterator.hasNext()) {
+            Contact person = (Contact) iterator.next();
+            if(cityName.equals(person.getCity())) {
+                count++;
+            }
+        }
+        System.out.println("Number of person in "+cityName+"="+count);
+    }
 }
