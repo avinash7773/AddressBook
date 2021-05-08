@@ -11,5 +11,6 @@ public class AddressBookMain {
         addressBook.deleteContact();
         addressBook.multipleAddressBook();
         addressBook.searchPersonByCity();
+        addressBook.searchPersonByState();
     }
 }

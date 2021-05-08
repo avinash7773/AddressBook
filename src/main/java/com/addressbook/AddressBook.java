@@ -173,4 +173,21 @@ public class AddressBook {
             }
         }
     }
+
+    /** @searchPersonByState method is for find person by state
+     *
+     */
+    public void searchPersonByState() {
+        System.out.println("Enter StateName:");
+        String StateName = readFromUser.next();
+
+        Iterator iterator = addressBook.iterator();
+        while (iterator.hasNext()) {
+            Contact person = (Contact) iterator.next();
+            if(StateName.equals(person.getState())) {
+                System.out.println(person);
+                return;
+            }
+        }
+    }
 }
