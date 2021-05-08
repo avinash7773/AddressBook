@@ -10,5 +10,6 @@ public class AddressBookMain {
         addressBook.editContact();
         addressBook.deleteContact();
         addressBook.multipleAddressBook();
+        addressBook.searchPersonByCity();
     }
 }

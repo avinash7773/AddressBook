@@ -1,10 +1,12 @@
 package com.addressbook;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class AddressBook {
 
     List<Contact> addressBook = new ArrayList<>();
+    Set addressBookList = new HashSet();
     Scanner readFromUser = new Scanner(System.in);
 
     /** @contactDetail method is used to add contact detail
@@ -147,13 +149,28 @@ public class AddressBook {
     public void multipleAddressBook() {
         System.out.println("Enter how many addressBook you want to create");
         int numberOfAddressBook = readFromUser.nextInt();
-        List addressBookList = new ArrayList<>();
         int firstAddressBook = 1;
         for (int addressBooks = firstAddressBook; addressBooks <= numberOfAddressBook; addressBooks++ ) {
-            System.out.println("Enter name of addressBook");
-            String addressBookName = readFromUser.next();
-            addressBookList.add(addressBookName);
+           contactDetail();
+           addressBookList.add(addressBook);
         }
         System.out.println(addressBookList);
+    }
+
+    /** @searchPersonByCity is used for find person by city
+     *
+     */
+    public void searchPersonByCity() {
+        System.out.println("Enter CityName:");
+        String cityName = readFromUser.next();
+
+        Iterator iterator = addressBook.iterator();
+        while (iterator.hasNext()) {
+            Contact person = (Contact) iterator.next();
+            if(cityName.equals(person.getCity())) {
+                System.out.println(person.getFirstName());
+                return;
+            }
+        }
     }
 }
