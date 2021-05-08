@@ -1,35 +1,35 @@
 package com.addressbook;
 
 public class Contact {
-    String first_Name;
-    String last_Name;
+    String firstName;
+    String lastName;
     String address;
     String city;
     String state;
     int zip;
-    double mobile_number;
+    double mobileNumber;
     String email;
 
     @Override
     public String toString() {
         return "Contact{" +
-                "first_Name='" + first_Name + '\'' +
-                ", last_Name='" + last_Name + '\'' +
+                "first_Name='" + firstName + '\'' +
+                ", last_Name='" + lastName + '\'' +
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", state='" + state + '\'' +
                 ", zip=" + zip +
-                ", mobile_number=" + mobile_number +
+                ", mobile_number=" + mobileNumber +
                 ", email='" + email + '\'' +
                 '}';
     }
 
-    public String getFirst_Name() {
-        return first_Name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public String getLast_Name() {
-        return last_Name;
+    public String getLastName() {
+        return lastName;
     }
 
     public String getAddress() {
@@ -48,20 +48,20 @@ public class Contact {
         return zip;
     }
 
-    public long getMobile_number() {
-        return (long) mobile_number;
+    public long getMobileNumber() {
+        return (long) mobileNumber;
     }
 
     public String getEmail() {
         return email;
     }
 
-    public void setFirst_Name(String first_Name) {
-        this.first_Name = first_Name;
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
     }
 
-    public void setLast_Name(String last_Name) {
-        this.last_Name = last_Name;
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
     public void setAddress(String address) {
@@ -80,8 +80,8 @@ public class Contact {
         this.zip = zip;
     }
 
-    public void setMobile_number(long mobile_number) {
-        this.mobile_number = mobile_number;
+    public void setMobileNumber(long mobileNumber) {
+        this.mobileNumber = mobileNumber;
     }
 
     public void setEmail(String email) {
