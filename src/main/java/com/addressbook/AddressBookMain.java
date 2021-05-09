@@ -14,5 +14,8 @@ public class AddressBookMain {
         addressBook.searchPersonByState();
         addressBook.countPersonByCity();
         addressBook.sortByAlphabetically();
+        addressBook.sortPersonByCity();
+        addressBook.sortPersonByState();
+        addressBook.sortPersonByZip();
     }
 }
