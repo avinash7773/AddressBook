@@ -13,5 +13,6 @@ public class AddressBookMain {
         addressBook.searchPersonByCity();
         addressBook.searchPersonByState();
         addressBook.countPersonByCity();
+        addressBook.sortByAlphabetically();
     }
 }

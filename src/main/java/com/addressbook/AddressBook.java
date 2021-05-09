@@ -205,4 +205,13 @@ public class AddressBook {
         }
         System.out.println("Number of person in "+cityName+"="+count);
     }
+
+    /** @sortByAlphabetically method is used for alphabetically sorting data  by firstNam
+     *
+     */
+    public void sortByAlphabetically() {
+        List<Contact> sortedAddressBook = (ArrayList<Contact>) addressBook.stream()
+                .sorted(Comparator.comparing(Contact::getFirstName)).collect(Collectors.toList());
+        sortedAddressBook.forEach(System.out::println);
+    }
 }
