@@ -214,4 +214,31 @@ public class AddressBook {
                 .sorted(Comparator.comparing(Contact::getFirstName)).collect(Collectors.toList());
         sortedAddressBook.forEach(System.out::println);
     }
+
+    /** @sortPersonByCity method is used for sort data by city
+     *
+     */
+    public void sortPersonByCity() {
+        List<Contact> sortAddressBook = (ArrayList<Contact>) addressBook.stream().sorted(Comparator.comparing(Contact::getCity))
+                .collect(Collectors.toList());
+        sortAddressBook.forEach(System.out::println);
+    }
+
+    /** @sortPersonByState method is used for sort data by city
+     *
+     */
+    public void sortPersonByState() {
+        List<Contact> sortAddressBook = (ArrayList<Contact>) addressBook.stream().sorted(Comparator.comparing(Contact::getState))
+                .collect(Collectors.toList());
+        sortAddressBook.forEach(System.out::println);
+    }
+
+    /** @sortPersonByZip method is used for sort data by city
+     *
+     */
+    public void sortPersonByZip() {
+        List<Contact> sortAddressBook = (ArrayList<Contact>) addressBook.stream().sorted(Comparator.comparing(Contact::getZip))
+                .collect(Collectors.toList());
+        sortAddressBook.forEach(System.out::println);
+    }
 }
