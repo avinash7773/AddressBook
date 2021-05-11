@@ -1,10 +1,13 @@
 package com.addressbook;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Scanner;
 
 public class AddressBookMain {
    static AddressBookManager addressBookManager = new AddressBookManager();
+   static FileService fileService = new FileService();
+
 
     public static void main(String[] args) {
         AddressBookMain addressBookMain = new AddressBookMain();
@@ -16,13 +19,13 @@ public class AddressBookMain {
     /** @addressBookOperation method is used to perform operations on addressBook
      *
      */
-    public void addressBookOperation() {
+    public void addressBookOperation()  {
         Scanner selectOperationNumber = new Scanner(System.in);
         System.out.println("------OperationOnAddressBook---------");
         System.out.println("1: Creat AddressBook\n2: Add Person\n3 : Edit Person\n" +
                 "4: Delete Contact\n5: searchPersonByCity\n6: searchPersonByCity\n" +
                 "7: CountPersonByCity\n8: sortByAlphabetically\n9: sortPersonByCity\n" +
-                "10: sortPersonByState\n11: sortPersonByZip\n12: close program");
+                "10: sortPersonByState\n11: sortPersonByZip\n12: write data into file\n13: Delete File\n14: close program");
         int number = selectOperationNumber.nextInt();
         switch (number) {
             case 1:
@@ -77,6 +80,13 @@ public class AddressBookMain {
                 addressBookManager.sortPersonByCity(personNameForSortingByZip);
                 break;
             case 12:
+                fileService.writeData();
+                System.out.println("Write Data Successfully!!!");
+                break;
+            case 13:
+                fileService.deleteFile();
+                break;
+            case 14:
                 System.out.println("*****THANK YOU******");
                 System.out.println("*****PROGRAM END****");
         }

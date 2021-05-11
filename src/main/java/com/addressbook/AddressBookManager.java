@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class AddressBookManager {
-      Map<String, List<Contact>> addressBookMap = new HashMap<>();
+   public static   Map<String, List<Contact>> addressBookMap = new HashMap<>();
       Scanner readFromUser = new Scanner(System.in);
       AddressBookMain addressBookMain = new AddressBookMain();
 
