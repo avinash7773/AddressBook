@@ -26,7 +26,7 @@ public class AddressBookMain {
                 "4: Delete Contact\n5: searchPersonByCity\n6: searchPersonByCity\n" +
                 "7: CountPersonByCity\n8: sortByAlphabetically\n9: sortPersonByCity\n" +
                 "10: sortPersonByState\n11: sortPersonByZip\n12: write data into file\n" +
-                "13: Delete File\n14: write data into CSVFile\n15: close program");
+                "13: Delete File\n14: write data into CSVFile\n15: write json file\n16: close program");
         int number = selectOperationNumber.nextInt();
         switch (number) {
             case 1:
@@ -88,11 +88,16 @@ public class AddressBookMain {
                 fileService.deleteFile();
                 break;
             case 14:
-                System.out.println("Enter AddressBook Name For sortingByZip:");
+                System.out.println("Enter AddressBook Name For writeCSV file:");
                 String addressBookNameForWriteDataIntoCSV = selectOperationNumber.next();
                 fileService.writeCSVFile(addressBookNameForWriteDataIntoCSV);
                 break;
             case 15:
+                System.out.println("Enter AddressBook Name For writeJSON file:");
+                String addressBookNameForWriteDataIntoJSON = selectOperationNumber.next();
+                fileService.writeJSONFile(addressBookNameForWriteDataIntoJSON);
+                break;
+            case 16:
                 System.out.println("*****THANK YOU******");
                 System.out.println("*****PROGRAM END****");
         }

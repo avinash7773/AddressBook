@@ -10,6 +10,20 @@ public class Contact {
     double mobileNumber;
     String email;
 
+    public Contact() {
+    }
+
+    public Contact(String firstName, String lastName, String address, String city, String state, int zip, long mobileNumber, String email) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.address = address;
+        this.city = city;
+        this.state = state;
+        this.zip = zip;
+        this.mobileNumber = mobileNumber;
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "Contact{" +

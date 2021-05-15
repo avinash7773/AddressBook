@@ -1,5 +1,9 @@
 package com.addressbook;
 
+import com.github.cliftonlabs.json_simple.JsonObject;
+import com.github.cliftonlabs.json_simple.Jsoner;
+import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.opencsv.CSVWriter;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.StatefulBeanToCsv;
@@ -116,6 +120,33 @@ public class FileService  extends AddressBookManager{
             ioException.printStackTrace();
         }
         addressBookMain.addressBookOperation();
+    }
+
+    public void writeJSONFile(String addressBookName) {
+        System.out.println("Enter json File Name");
+        String fileName = scannerObject.next();
+        Path tempCSVFile = Paths.get(path+"/"+fileName);
+        Gson gson = new Gson();
+        JsonObject jsonObject = new JsonObject();
+        try {
+            BufferedWriter writer = Files.newBufferedWriter(Paths.get(String.valueOf(tempCSVFile)));
+            Iterator<Contact> iterator = addressBookMap.get(addressBookName).stream().iterator();
+            while (iterator.hasNext()) {
+                Contact person = iterator.next();
+                jsonObject.put("FirstName:",person.getFirstName());
+                jsonObject.put("LastName: ",person.getLastName());
+                jsonObject.put("Address:",person.getAddress()) ;
+                jsonObject.put("City:",person.getCity());
+                jsonObject.put("State:",person.getState());
+                jsonObject.put("Zip:",person.getZip());
+                jsonObject.put("MobileNumber:",person.getMobileNumber());
+                jsonObject.put("Email:",person.getEmail());
+            }
+            writer.write(jsonObject.toString());
+            writer.close();
+        } catch (IOException e) {
+            return;
+        }
     }
 }
 
